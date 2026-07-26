@@ -1,0 +1,11 @@
+{{- $email := .Get 0 -}}
+{{- $id := printf "email-%s" (md5 $email) -}}
+<a id="{{ $id }}" href="#" rel="nofollow">email (abilita JavaScript)</a><noscript> — abilita JavaScript per vedere l'indirizzo</noscript>
+<script>
+(function() {
+  var a = document.getElementById("{{ $id }}");
+  var addr = atob("{{ base64Encode $email }}");
+  a.href = "mailto:" + addr;
+  a.textContent = addr;
+})();
+</script>
