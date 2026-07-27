@@ -14,11 +14,16 @@
   display: flex;
   gap: 1rem;
   font-family: monospace;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 .topbar a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.topbar a:hover {
+  background: none !important;
+  color: inherit !important;
+  text-decoration: underline !important;
 }
 @media (max-width: 700px) {
   .topbar {
@@ -27,7 +32,7 @@
 }
 </style>
 <div class="topbar">
-  <a href="/random">esplora</a>
+  <a href="/random">esplora!</a>
   <a href="/contatti">contatti</a>
 </div>
 
