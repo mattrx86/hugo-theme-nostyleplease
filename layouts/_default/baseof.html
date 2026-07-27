@@ -4,11 +4,33 @@
     <body a="{{ $.Site.Params.theme_config.appearance | default "auto" }}">
 
         <!-- barra superiore destra -->
-        <div style="position:absolute;top:0.8rem;right:calc(50% - 320px);z-index:100;font-size:0.75rem;display:flex;gap:1rem;font-family:monospace;opacity:0.4;">
-            <a href="/random" style="color:inherit;text-decoration:none;">esplora</a>
-            <a href="/contatti" style="color:inherit;text-decoration:none;">contatti</a>
-            <a href="https://www.instagram.com/riccadonna_art/" target="_blank" style="color:inherit;text-decoration:none;">instragram</a>
-        </div>
+<style>
+.topbar {
+  position: absolute;
+  top: 0.8rem;
+  right: calc(50% - 320px);
+  z-index: 100;
+  font-size: 0.75rem;
+  display: flex;
+  gap: 1rem;
+  font-family: monospace;
+  opacity: 0.4;
+}
+.topbar a {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 700px) {
+  .topbar {
+    right: 1rem;
+  }
+}
+</style>
+<div class="topbar">
+  <a href="/random">esplora!</a>
+  <a href="/contatti">contatti</a>
+  <a href="https://www.instagram.com/riccadonna_art/" target="_blank">instagram</a>
+</div>
 
         <!-- Umami analytics -->
         <script defer src="https://cloud.umami.is/script.js" data-website-id="d8d278f4-ddec-4002-b907-0cc9eeda5917"></script>
