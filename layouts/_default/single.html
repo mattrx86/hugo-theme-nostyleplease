@@ -1,7 +1,15 @@
 {{ define "main" }}
-{{ partial "back_link.html" .}}
 
 <article>
+    <nav style="display:flex;justify-content:space-between;margin-bottom:1.5rem;font-size:0.85rem;font-family:monospace;">
+        {{ if .NextInSection }}
+        <a href="{{ .NextInSection.Permalink }}" style="opacity:0.5;text-decoration:none;">← precedente</a>
+        {{ else }}<span></span>{{ end }}
+        {{ if .PrevInSection }}
+        <a href="{{ .PrevInSection.Permalink }}" style="opacity:0.5;text-decoration:none;">successivo →</a>
+        {{ else }}<span></span>{{ end }}
+    </nav>
+
     {{ if not .Params.hideDate }}
     <p class="post-meta">
         <time datetime="{{ .Date }}">
@@ -21,16 +29,5 @@
     {{ .Content }}
 
 </article>
-
-{{ if or .PrevInSection .NextInSection }}
-<nav style="margin-top:2rem;font-size:0.85rem;display:flex;justify-content:space-between;opacity:0.6;">
-    {{ if .NextInSection }}
-    <a href="{{ .NextInSection.Permalink }}">← {{ .NextInSection.Title }}</a>
-    {{ else }}<span></span>{{ end }}
-    {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }} →</a>
-    {{ end }}
-</nav>
-{{ end }}
 
 {{ end }}
