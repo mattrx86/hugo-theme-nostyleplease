@@ -56,7 +56,7 @@
 }
 
 @mixin light-appearance {
-  @include theme(#ffffff, #000000, #595959, #3548cf, #dae5ec); // modus-operandi
+  @include theme(#ffffff, #000000, #595959, #6b4947, #ccb4b3); // modus-operandi
 }
 
 body[a="dark"] { @include dark-appearance; }
