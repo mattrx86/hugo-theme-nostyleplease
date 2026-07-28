@@ -3,10 +3,10 @@
 <article>
     <nav style="display:flex;justify-content:space-between;margin-bottom:1.5rem;font-size:0.85rem;font-family:monospace;">
         {{ if .NextInSection }}
-        <a href="{{ .NextInSection.Permalink }}" style="opacity:0.5;text-decoration:none;">← precedente</a>
+        <a href="{{ .NextInSection.Permalink }}" style=text-decoration:none;">← precedente</a>
         {{ else }}<span></span>{{ end }}
         {{ if .PrevInSection }}
-        <a href="{{ .PrevInSection.Permalink }}" style="opacity:0.5;text-decoration:none;">successivo →</a>
+        <a href="{{ .PrevInSection.Permalink }}" style=text-decoration:none;">successivo →</a>
         {{ else }}<span></span>{{ end }}
     </nav>
 
