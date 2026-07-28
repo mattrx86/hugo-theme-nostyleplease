@@ -194,3 +194,17 @@ article img {
   display: block;
   margin: 0 auto;
 }
+
+details {
+  border: none !important;
+  background-color: rgba(#A37775, 0.15) !important;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+}
+details summary {
+  cursor: pointer;
+}
+details[open] summary {
+  border-bottom: none !important;
+  margin-bottom: 0.5rem;
+}
