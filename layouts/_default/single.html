@@ -2,11 +2,13 @@
 {{ partial "back_link.html" .}}
 
 <article>
+    {{ if not .Params.hideDate }}
     <p class="post-meta">
         <time datetime="{{ .Date }}">
             {{ .Date | time.Format site.Params.theme_config.date_format }}
         </time>
     </p>
+    {{ end }}
 
     <h1>{{ .Title }}</h1>
 
@@ -17,5 +19,18 @@
     {{ end }}
 
     {{ .Content }}
+
 </article>
+
+{{ if or .PrevInSection .NextInSection }}
+<nav style="margin-top:2rem;font-size:0.85rem;display:flex;justify-content:space-between;opacity:0.6;">
+    {{ if .NextInSection }}
+    <a href="{{ .NextInSection.Permalink }}">← {{ .NextInSection.Title }}</a>
+    {{ else }}<span></span>{{ end }}
+    {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }} →</a>
+    {{ end }}
+</nav>
+{{ end }}
+
 {{ end }}
