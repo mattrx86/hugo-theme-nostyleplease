@@ -2,44 +2,23 @@
 <html lang="{{ $.Site.LanguageCode }}">
     {{- partial "head.html" . -}}
     <body a="{{ $.Site.Params.theme_config.appearance | default "auto" }}">
-
-        <!-- barra superiore destra -->
-<style>
-.topbar {
-  position: absolute;
-  top: 0.8rem;
-  right: calc(50% - 320px);
-  z-index: 100;
-  font-size: 1rem;
-  display: flex;
-  gap: 1rem;
-  font-family: monospace;
-  opacity: 1;
-}
-.topbar a {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-.topbar a:hover {
-  background: none !important;
-  color: inherit !important;
-  text-decoration: underline !important;
-}
-@media (max-width: 700px) {
-  .topbar {
-    right: 1rem;
-  }
-}
-</style>
-<div class="topbar">
-  <a href="/">home</a>
-  <a href="/contatti/">contatti</a>
-  <a href="/random/">esplora!</a>
-</div>
-
-        <!-- Umami analytics -->
+        <style>
+        img {
+          pointer-events: none;
+          user-select: none;
+          -webkit-user-drag: none;
+        }
+        .topbar { position: absolute; top: 0.8rem; right: calc(50% - 320px); z-index: 100; font-size: 1rem; display: flex; gap: 1rem; font-family: monospace; opacity: 1; }
+        .topbar a { color: inherit !important; text-decoration: none !important; }
+        .topbar a:hover { background: none !important; color: inherit !important; text-decoration: underline !important; }
+        @media (max-width: 700px) { .topbar { right: 1rem; } }
+        </style>
+        <div class="topbar">
+          <a href="/">home</a>
+          <a href="/contatti/">contatti</a>
+          <a href="/random/">esplora!</a>
+        </div>
         <script defer src="https://cloud.umami.is/script.js" data-website-id="d8d278f4-ddec-4002-b907-0cc9eeda5917"></script>
-
         <main class="page-content" aria-label="Content">
             <div class="w">
                 {{- block "main" . }}{{- end }}
@@ -48,11 +27,3 @@
         </main>
     </body>
 </html>
-
-<style>
-img { 
-  pointer-events: none; 
-  user-select: none;
-  -webkit-user-drag: none;
-}
-</style>
